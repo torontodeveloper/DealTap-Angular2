@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+
+  <div class="row">
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <img width="300" src="assets\dealtap.png">
+</div>
+  </div>
+<div class="row">
+<div class="column small-12 large-2">
+    <label class="sbw_light">Contact List:</label>
+    <select [(ngModel)]="contactList.contact">
+       <option *ngFor="let contact of contactList" [value]="contact.name">{{contact.name +","+contact.phone}}</option>
+    </select>
+</div>
+</div>
+<div class="row">
+<!-- <div>
+<select mulitple id="contacts" *ngFor="let c of contactList">
+  <option  ngValue="c.name">{{c.name+c.phone}}</option>
+</select>
+</div> -->
+<label for="name">Enter Name</label>
+<input type="text" id="name" [(ngModel)]="name" placeholder="First Name Last Name"> <br>
+<label for="phone">Enter Phone Number</label>
+<input type="phone" id="phone" [(ngModel)]="phone" placeholder="Phone Number">
+<br>
+<button type="submit" (click)="addContact()">Add</button>
+<button type="submit"(click)="deleteContact">Delete</button>
+</div>
+</div>
+
+<app-products></app-products>
